@@ -1,3 +1,5 @@
+/* @flow */
+
 import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -23,7 +25,7 @@ class FetchData extends React.Component<WeatherForecastProps, {}> {
         this.props.requestWeatherForecasts(startDateIndex);
     }
 
-    public render() {
+    render() {
         return <div>
             <h1>Weather forecast</h1>
             <p>This component demonstrates fetching data from the server and working with URL parameters.</p>
@@ -32,7 +34,7 @@ class FetchData extends React.Component<WeatherForecastProps, {}> {
         </div>;
     }
 
-    private renderForecastsTable() {
+    renderForecastsTable() {
         return <table className='table'>
             <thead>
                 <tr>
@@ -55,7 +57,7 @@ class FetchData extends React.Component<WeatherForecastProps, {}> {
         </table>;
     }
 
-    private renderPagination() {
+    renderPagination() {
         let prevStartDateIndex = (this.props.startDateIndex || 0) - 5;
         let nextStartDateIndex = (this.props.startDateIndex || 0) + 5;
 
@@ -70,4 +72,4 @@ class FetchData extends React.Component<WeatherForecastProps, {}> {
 export default connect(
     (state: ApplicationState) => state.weatherForecasts, // Selects which state properties are merged into the component's props
     WeatherForecastsState.actionCreators                 // Selects which action creators are merged into the component's props
-)(FetchData) as typeof FetchData;
+)(FetchData);

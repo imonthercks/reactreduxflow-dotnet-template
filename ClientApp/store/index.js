@@ -1,3 +1,5 @@
+/* @flow */
+
 import * as WeatherForecasts from './WeatherForecasts';
 import * as Counter from './Counter';
 

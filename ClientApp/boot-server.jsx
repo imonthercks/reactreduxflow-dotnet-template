@@ -1,3 +1,5 @@
+/* @flow */
+
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
@@ -9,7 +11,7 @@ import { routes } from './routes';
 import configureStore from './configureStore';
 
 export default createServerRenderer(params => {
-    return new Promise<RenderResult>((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         // Prepare Redux store with in-memory history, and dispatch a navigation event
         // corresponding to the incoming URL
         const basename = params.baseUrl.substring(0, params.baseUrl.length - 1); // Remove trailing slash

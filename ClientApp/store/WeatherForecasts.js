@@ -1,3 +1,5 @@
+/* @flow */
+
 import { fetch, addTask } from 'domain-task';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
@@ -46,7 +48,7 @@ export const actionCreators = {
         // Only load data if it's something we don't already have (and are not already loading)
         if (startDateIndex !== getState().weatherForecasts.startDateIndex) {
             let fetchTask = fetch(`api/SampleData/WeatherForecasts?startDateIndex=${ startDateIndex }`)
-                .then(response => response.json() as Promise<WeatherForecast[]>)
+                .then(response => (response.json() : Promise<WeatherForecast[]>))
                 .then(data => {
                     dispatch({ type: 'RECEIVE_WEATHER_FORECASTS', startDateIndex: startDateIndex, forecasts: data });
                 });
@@ -63,7 +65,7 @@ export const actionCreators = {
 const unloadedState: WeatherForecastsState = { forecasts: [], isLoading: false };
 
 export const reducer: Reducer<WeatherForecastsState> = (state: WeatherForecastsState, incomingAction: Action) => {
-    const action = incomingAction as KnownAction;
+    const action = (incomingAction : KnownAction);
     switch (action.type) {
         case 'REQUEST_WEATHER_FORECASTS':
             return {

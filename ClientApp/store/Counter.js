@@ -1,3 +1,5 @@
+/* @flow */
+
 import { Action, Reducer } from 'redux';
 
 // -----------------
@@ -12,8 +14,8 @@ export interface CounterState {
 // They do not themselves have any side-effects; they just describe something that is going to happen.
 // Use @typeName and isActionType for type detection that works even after serialization/deserialization.
 
-interface IncrementCountAction { type: 'INCREMENT_COUNT' }
-interface DecrementCountAction { type: 'DECREMENT_COUNT' }
+type IncrementCountAction = { type: 'INCREMENT_COUNT' };
+type DecrementCountAction = { type: 'DECREMENT_COUNT' };
 
 // Declare a 'discriminated union' type. This guarantees that all references to 'type' properties contain one of the
 // declared type strings (and not any other arbitrary string).
@@ -24,8 +26,8 @@ type KnownAction = IncrementCountAction | DecrementCountAction;
 // They don't directly mutate state, but they can have external side-effects (such as loading data).
 
 export const actionCreators = {
-    increment: () => <IncrementCountAction>{ type: 'INCREMENT_COUNT' },
-    decrement: () => <DecrementCountAction>{ type: 'DECREMENT_COUNT' }
+    increment: function() : IncrementCountAction { return { type: 'INCREMENT_COUNT' }},
+    decrement: function() : DecrementCountAction { return { type: 'DECREMENT_COUNT' }}
 };
 
 // ----------------
