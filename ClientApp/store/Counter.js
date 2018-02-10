@@ -42,6 +42,6 @@ export const reducer = (state: CounterState, action: KnownAction) : CounterState
         default:
             // The following line guarantees that every action in the KnownAction union has been covered by a case above
             (action: empty);
-            return state;
+            return state || { count: 0 };
     }
 };
