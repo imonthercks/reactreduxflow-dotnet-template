@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const merge = require('webpack-merge');
 
 module.exports = (env) => {
@@ -10,7 +9,7 @@ module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const sharedConfig = () => ({
         stats: { modules: false },
-        resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        resolve: { extensions: ['.js', '.jsx'] },
         output: {
             filename: '[name].js',
             publicPath: 'dist/' // Webpack dev middleware, if enabled, handles requests for this URL prefix
@@ -21,8 +20,7 @@ module.exports = (env) => {
                 //{ test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
-        },
-        plugins: [new CheckerPlugin()]
+        }
     });
 
     // Configuration for client-side bundle suitable for running in browsers
