@@ -28,6 +28,7 @@
     "event-source-polyfill": "0.0.9",
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "0.11.2",
+    "flow-bin": "^0.65.0",
     "history": "4.6.3",
     "jquery": "3.2.1",
     "node-noop": "1.0.0",

@@ -24,14 +24,18 @@ const store = configureStore(history, initialState);
 function renderApp() {
     // This code starts up the React app when it runs in a browser. It sets up the routing configuration
     // and injects the app into a DOM element.
-    ReactDOM.render(
-        <AppContainer>
-            <Provider store={ store }>
-                <ConnectedRouter history={ history } children={ routes } />
-            </Provider>
-        </AppContainer>,
-        document.getElementById('react-app')
-    );
+
+    var appElement = document.getElementById('react-app');
+    if (appElement != null) {
+        ReactDOM.render(
+            <AppContainer>
+                <Provider store={ store }>
+                    <ConnectedRouter history={ history } children={ routes } />
+                </Provider>
+            </AppContainer>,
+            appElement
+        );
+    }
 }
 
 renderApp();

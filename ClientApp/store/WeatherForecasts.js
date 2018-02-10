@@ -86,7 +86,7 @@ export const reducer: Reducer<WeatherForecastsState> = (state: WeatherForecastsS
             break;
         default:
             // The following line guarantees that every action in the KnownAction union has been covered by a case above
-            const exhaustiveCheck: never = action;
+            const exhaustiveCheck: null = action;
     }
 
     return state || unloadedState;

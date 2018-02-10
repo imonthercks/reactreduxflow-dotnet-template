@@ -3,7 +3,11 @@
 import * as React from 'react';
 import { NavMenu } from './NavMenu';
 
-export class Layout extends React.Component<{}, {}> {
+type Props = {
+    children?: React.Node,
+  };
+
+export class Layout extends React.Component<Props, {}> {
     render() {
         return <div className='container-fluid'>
             <div className='row'>
