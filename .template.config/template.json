@@ -20,7 +20,12 @@
       "source": "./",
       "target": "./",
       "exclude": [
-        ".template.config/**"
+        ".template.config/**",
+        ".git/**",
+        ".vscode/**",
+        "bin/**",
+        "node_modules/**",
+        "obj/**"
       ],
       "modifiers": [
         {
