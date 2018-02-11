@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace lean_coffee_kanban.Controllers
+namespace ReactReduxFlowSpa.Controllers
 {
     public class HomeController : Controller
     {

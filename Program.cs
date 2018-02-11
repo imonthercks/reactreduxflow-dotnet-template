@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace lean_coffee_kanban
+namespace ReactReduxFlowSpa
 {
     public class Program
     {

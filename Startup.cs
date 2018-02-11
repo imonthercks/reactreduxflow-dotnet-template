@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace lean_coffee_kanban
+namespace ReactReduxFlowSpa
 {
     public class Startup
     {
